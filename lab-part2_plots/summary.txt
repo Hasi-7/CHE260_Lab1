@@ -1,0 +1,3 @@
+Loaded 2505 measurements from lab-part2
+Mass-flow integral: 23.259050 g
+Graphs saved to lab-part2_plots

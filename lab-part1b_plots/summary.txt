@@ -1,0 +1,5 @@
+Loaded 7798 measurements from lab-part1b
+Mass-flow integral: 35.862567 g
+Section 1 (16.1-53.4 s): 22.996500 g
+Section 2 (77.6-104.2 s): 12.866067 g
+Graphs saved to lab-part1b_plots
