@@ -33,7 +33,7 @@
     \textbf{Group Members}\par
     % Add or remove rows to match the group size; fill in every name and ID.
     \begin{tabular}{@{}p{0.45\textwidth}p{0.35\textwidth}@{}}
-        \textbf{Chance Hattrick} & \textbf{Student ID} \\
+        \textbf{Chance Hattrick} & \textbf{1011852434} \\
         \textbf{Ammar Hasham} & \textbf{1011941124} \\
         \textbf{Muhammad Hasnain Heryani} & \textbf{1011884695} \\
     \end{tabular}
@@ -47,8 +47,218 @@
 \hypersetup{pageanchor=true}
 
 \section{Introduction}
-% Introduce the subject, objectives, main observations, and relevant theory.
-% Maximum 2 pages.
+
+\subsection{Ideal Gas Law}
+
+Gases provide a fundamental foundation for understanding
+chemistry, and the quantitative laws governing their behavior
+establish a direct connection between macroscopic and
+particle-level properties. A principal example of this
+relationship is the Ideal Gas Law. The law was formulated
+in 1834 by Benoît Paul Émile Clapeyron, who combined
+empirical relationships including Boyle's Law and
+Charles's Law [1]. The most common formulation is:
+
+\begin{equation}
+    PV = NR_uT
+\end{equation}
+
+where $P$ is the absolute pressure of the system, $V$ is
+the volume, $N$ is the number of moles of gas, $R_u$ is
+the universal gas constant
+($8.314~\mathrm{J/(mol\cdot K)}$), and $T$ is the
+absolute temperature expressed in Kelvin.
+
+For this experiment, the absolute pressure is calculated
+using:
+
+\begin{equation}
+    P_{\mathrm{abs}} =
+    P_{\mathrm{gauge}} + P_{\mathrm{atm}}
+\end{equation}
+
+where $P_{\mathrm{gauge}}$ is the pressure measured by
+the gauge and $P_{\mathrm{atm}}$ is the atmospheric
+pressure measured in the laboratory.
+
+Since the number of moles is equal to the total mass of
+the gas divided by its molar mass, the Ideal Gas Law
+can be rearranged as:
+
+\begin{equation}
+    PV = mRT
+\end{equation}
+
+where $m$ is the mass of the gas and $R$ is the
+specific gas constant, obtained by dividing $R_u$ by
+the molar mass. For air, this value is approximately
+$287~\mathrm{J/(kg\cdot K)}$ [2].
+
+This formulation is particularly important for this
+experiment because the mass of air introduced into the
+tank can be calculated from the measured mass flow rate.
+
+Under the ideal gas model, particles are assumed to
+move randomly and independently, with negligible
+molecular volume and negligible intermolecular forces
+except during collisions. These collisions are assumed
+to be perfectly elastic, conserving both momentum
+and kinetic energy [3].
+
+\subsection{Thermodynamic State Properties and Path Independence}
+
+To properly understand the Ideal Gas Law, it is also
+important to understand thermodynamic properties,
+particularly state properties. A thermodynamic property
+is a measurable or calculable macroscopic characteristic
+of a system whose value can be determined without
+knowing the previous history of the system [4].
+
+These properties describe the thermodynamic state of
+a system and include pressure, temperature, volume,
+mass, and density. Their values depend only on the
+current state of the system rather than the path taken
+to reach that state. This characteristic is known as
+path independence.
+
+This concept is especially important for this laboratory
+experiment, as the first part compares two different
+methods of equalizing pressure between interconnected
+tanks of air.
+
+In the first method, air is transferred rapidly through
+a solenoid valve, while in the second method, air is
+transferred gradually through a needle valve. Although
+the pressure and temperature histories may differ between
+these processes, both methods are expected to produce
+approximately the same final equilibrium conditions,
+provided the initial conditions and final constraints
+are equivalent.
+
+Path independence can also be demonstrated through
+the change in internal energy of a system:
+
+\begin{equation}
+    \Delta U = U_f - U_i
+\end{equation}
+
+where $U_f$ and $U_i$ represent the final and initial
+internal energies, respectively. Since internal energy
+is a state property, its change depends only on the
+initial and final thermodynamic states.
+
+This differs from heat transfer and work, which are
+path-dependent quantities.
+
+\subsection{Heat Transfer and the First Law of Thermodynamics}
+
+An important consideration when studying gas expansion
+is the transfer of energy between a system and its
+surroundings. This relationship is described by the
+First Law of Thermodynamics, which states that energy
+is conserved [4].
+
+For a closed system, neglecting changes in kinetic
+and potential energy, the First Law can be written as:
+
+\begin{equation}
+    \Delta U = Q - W
+\end{equation}
+
+where $\Delta U$ is the change in internal energy,
+$Q$ is the net heat transferred into the system,
+and $W$ is the work done by the system.
+
+In this experiment, the two interconnected rigid tanks
+can be treated as a single closed system. Since the
+total volume remains constant, there is no boundary
+work. Assuming negligible other work interactions,
+the First Law becomes:
+
+\begin{equation}
+    \Delta U = Q
+\end{equation}
+
+Heat transfer is particularly relevant when comparing
+the rapid and gradual pressure-equalization methods.
+During rapid expansion through the solenoid valve,
+air moves between the tanks over a relatively short
+period, limiting the time available for heat exchange
+with the surroundings.
+
+Consequently, temporary temperature differences may
+develop between the two tanks.
+
+In contrast, gradual expansion through the needle
+valve provides more time for heat exchange with the
+surrounding environment, allowing the system to
+remain closer to thermal equilibrium throughout the
+process.
+
+Although the two methods may produce different
+temperature histories, they are expected to approach
+similar final equilibrium conditions.
+
+\subsection{Air Compressibility and Intermolecular Forces}
+
+Finally, another important characteristic of gases
+is their compressibility, which describes how their
+volume or density changes in response to variations
+in pressure.
+
+Unlike liquids and solids, gases are highly
+compressible due to the relatively large distances
+between their molecules [5].
+
+In this experiment, the two tanks are rigid, meaning
+their volumes remain constant throughout the process.
+Consequently, changes in pressure are associated
+with changes in the mass, density, and temperature
+of the air within each tank.
+
+This relationship can be described using the
+Ideal Gas Law, rearranged as:
+
+\begin{equation}
+    \rho = \frac{P}{RT}
+\end{equation}
+
+where $\rho$ represents the density of air.
+
+However, the Ideal Gas Law assumes that the volume
+occupied by individual gas molecules and the
+intermolecular forces between them are negligible.
+
+In reality, attractive and repulsive intermolecular
+forces influence gas behavior, particularly at high
+pressures or low temperatures. As a result, real gases
+may deviate from the predictions of the Ideal Gas Law.
+
+These deviations can be quantified using the
+compressibility factor, $Z$:
+
+\begin{equation}
+    Z = \frac{Pv}{RT}
+\end{equation}
+
+where $v$ represents the specific volume of the gas.
+
+For an ideal gas, $Z = 1$, while values different
+from unity indicate deviations from ideal gas behavior.
+
+In this experiment, the maximum gauge pressure was
+approximately $40~\mathrm{psi}$, corresponding to
+an absolute pressure of approximately
+$3.8~\mathrm{bar}$.
+
+Under these relatively moderate conditions, air is
+expected to behave approximately as an ideal gas,
+with a compressibility factor close to unity.
+
+Therefore, although intermolecular forces may
+introduce some uncertainty into the calculated
+tank volumes, their effects are expected to be
+relatively small.
 
 \section{Results and Discussion}
 
@@ -60,14 +270,14 @@ is the differences in a slow equalization of pressure versus a rapid equalizatio
 
 
 \subsubsection{Processed Results: Rapid and Slow Expansion}
-Figures~\ref{fig:part1a-pressure}--\ref{fig:part1b-flow} show the measured pressure, temperature, and mass-flow histories for the rapid and slow expansions.
-
+Figures~\ref{fig:part1a-pressure}--\ref{fig:part1b-temperature} show the measured pressure and temperature histories for the rapid and slow expansions.
 \begin{figure}[!htbp]
     \centering
     \includegraphics[width=0.82\linewidth,height=0.27\textheight,keepaspectratio]{lab-part1a_plots/pressure.png}
     \caption{Tank pressures during the Part 1a rapid expansion.}
     \label{fig:part1a-pressure}
 \end{figure}
+
 
 \begin{figure}[!htbp]
     \centering
@@ -76,12 +286,22 @@ Figures~\ref{fig:part1a-pressure}--\ref{fig:part1b-flow} show the measured press
     \label{fig:part1a-temperature}
 \end{figure}
 
-\begin{figure}[!htbp]
-    \centering
-    \includegraphics[width=0.82\linewidth,height=0.27\textheight,keepaspectratio]{lab-part1a_plots/mass_flow_rate.png}
-    \caption{Mass flow rate during the Part 1a rapid expansion.}
-    \label{fig:part1a-flow}
-\end{figure}
+Taking averages across the marked time ranges on Figures~\ref{fig:part1a-pressure}--\ref{fig:part1a-temperature} for final pressure and temperature values,
+we obtain the following values:
+
+\[P_{2R}=24.13\text{ PSI} \text{, } P_{2L}=24.03\text{ PSI}\]
+\[T_{2R}=28.33^\circ\text{C} \text{, } T_{2L}=25.25^\circ\text{C}\]
+
+Using these values with Ideal Gas Law, we can determine the propotionality of pressure, volume and temperature between the two tanks at the final state.\@
+ It can be assumed that the ratio of the final pressure, volume and temperature of the left tank is equal to the final pressure, volume and temperature of the right tank
+ since both tanks are in equilibrium with each other at the final values.
+
+\[\frac{P_{2L}V_{L}}{T_{2L}}=\frac{P_{2R}V_{R}}{T_{2R}}\]
+\[\frac{V_{L}}{V_{R}}=\frac{P_{2R}}{P_{2L}} \cdot \frac{T_{2L}}{T_{2R}}\]
+\[\frac{V_{L}}{V_{R}}=\frac{24.13}{24.03} \cdot \frac{25.25}{28.33}\]
+\[\frac{V_{L}}{V_{R}}=0.895\]
+
+
 
 \begin{figure}[!htbp]
     \centering
@@ -95,13 +315,6 @@ Figures~\ref{fig:part1a-pressure}--\ref{fig:part1b-flow} show the measured press
     \includegraphics[width=0.82\linewidth,height=0.27\textheight,keepaspectratio]{lab-part1b_plots/temperature.png}
     \caption{Tank temperatures during the Part 1b slow expansion.}
     \label{fig:part1b-temperature}
-\end{figure}
-
-\begin{figure}[!htbp]
-    \centering
-    \includegraphics[width=0.82\linewidth,height=0.27\textheight,keepaspectratio]{lab-part1b_plots/mass_flow_rate.png}
-    \caption{Mass flow rate during the Part 1b slow expansion.}
-    \label{fig:part1b-flow}
 \end{figure}
 
 \clearpage
@@ -132,7 +345,7 @@ Figures~\ref{fig:part1a-pressure}--\ref{fig:part1b-flow} show the measured press
 
 
 
-Knowing that all added mass is measured by the sensor, we can calculate the added mass in the left tank as the integral of the mass flow rate - time graph. Using numerical methods, we can find that the total mass inside the tank is 23.259g. \@ 
+Knowing that all added mass is measured by the sensor, we can calculate the added mass in the left tank as the integral of the mass flow rate - time graph. Using numerical methods, we can find that the total mass inside the tank is 23.259g. \@
 
 Since the mass inside the system after any time is known, we can create a system of equations to calculate V and initial mass. \@
 $$ PV = (m_i + \delta m)RT $$
