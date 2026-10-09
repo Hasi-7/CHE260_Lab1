@@ -34,3 +34,24 @@
 - Normalize paragraph breaks, sentence spacing, inline variables, and display equations using the existing `amsmath` package; preserve the author's scientific claims and numerical expressions for separate review.
 - Keep 12 pt type, double spacing, one-inch margins, and the existing figure captions and labels.
 - Build with two pdfLaTeX passes into `out/`, the existing editor build directory, and check page count, references, and box warnings.
+
+## Two-column report body (October 8, 2026)
+
+- Goal: format the main report in two columns while retaining a full-width title page.
+- Entry point: [[lab_report.tex]]; switch to two columns after the title page. Figures already size themselves relative to `\linewidth`.
+- Preserve report wording, equations, 12 pt type, double spacing, and one-inch margins.
+- Verify with two pdfLaTeX passes into `out/` and check for unresolved references and overfull boxes.
+
+## Compact slow-expansion figures (October 8, 2026)
+
+- Goal: reduce the gap between Figures 3 and 4 and allow following content onto their page.
+- Keep both numbered captions and labels, grouping the slow-expansion plots in one float with a fixed 12 pt gap.
+- Use ragged-bottom columns to avoid stretching vertical whitespace; preserve current report content and user edits.
+- Build twice into `out/` and check references and layout warnings.
+
+## Part 2 graphs placed by content (October 8, 2026)
+
+- Goal: add the existing graphs from `lab-part2_plots/` to [[lab_report.tex]] near the relevant Part 2 discussion.
+- Put pressure and temperature together under processed results; put mass flow under initial mass and tank volume before its integration discussion.
+- Preserve numerical claims and existing prose, adding captions, unique labels, and figure references.
+- Build twice into `out/` to verify images and references.
