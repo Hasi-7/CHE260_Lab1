@@ -12,6 +12,7 @@ import matplotlib
 
 matplotlib.use("Agg")  # Save figures without requiring a desktop display.
 import matplotlib.pyplot as plt
+from matplotlib.ticker import MaxNLocator
 
 
 COLUMNS = (
@@ -119,21 +120,39 @@ def save_graph(
     state_windows: dict[str, tuple[float, float]] | None = None,
 ) -> None:
     times = [row["Time(s)"] for row in measurements]
-    figure, axis = plt.subplots(figsize=(10, 5))
+    # Match the report's column width so 12 pt text stays readable after embedding.
+    figure = plt.figure(figsize=(3.2, 3.1), layout="constrained")
+    has_legend = len(columns) > 1 or sections or state_windows
+    if has_legend:
+        legend_entries = len(columns) + len(sections or []) + len(state_windows or {})
+        legend_rows = math.ceil(legend_entries / 2)
+        grid = figure.add_gridspec(2, 1, height_ratios=(1, 0.15 * legend_rows))
+        axis = figure.add_subplot(grid[0])
+        legend_axis = figure.add_subplot(grid[1])
+        legend_axis.set_axis_off()
+    else:
+        axis = figure.add_subplot()
     for column in columns:
         axis.plot(times, [row[column] for row in measurements], label=column)
     for index, (start, end) in enumerate(sections or [], start=1):
         axis.axvspan(start, end, alpha=0.12, label=f"Section {index}")
     for label, (start, end) in (state_windows or {}).items():
         color = "tab:green" if label == "Initial" else "tab:red"
-        axis.axvline(start, color=color, linestyle=":", linewidth=2, label=f"{label} window")
+        axis.axvline(start, color=color, linestyle=":", linewidth=2, label=label)
         axis.axvline(end, color=color, linestyle=":", linewidth=2)
-    axis.set(title=title, xlabel="Time (s)", ylabel=ylabel)
+    axis.set_title(title, fontsize=13, pad=8)
+    axis.set_xlabel("Time (s)", fontsize=12)
+    axis.set_ylabel(ylabel, fontsize=12)
+    axis.tick_params(axis="both", labelsize=12)
+    axis.xaxis.set_major_locator(MaxNLocator(nbins=4))
+    axis.yaxis.set_major_locator(MaxNLocator(nbins=5))
     axis.grid(True, alpha=0.3)
-    if len(columns) > 1 or sections or state_windows:
-        axis.legend()
-    figure.tight_layout()
-    figure.savefig(destination, dpi=150)
+    if has_legend:
+        legend_axis.legend(
+            *axis.get_legend_handles_labels(), loc="center", ncol=2,
+            fontsize=12, handlelength=1.2, handletextpad=0.4, columnspacing=0.8,
+        )
+    figure.savefig(destination, dpi=300)
     plt.close(figure)
 
 
@@ -181,9 +200,9 @@ def main() -> None:
         output_dir = args.output_dir or args.file.parent / f"{args.file.stem}_plots"
         output_dir.mkdir(parents=True, exist_ok=True)
         graphs = (
-            (("P1(PSI)", "P2(PSI)"), "Pressure vs time", "Pressure (PSI)", "pressure.png"),
-            (("T1(Deg C)", "T2(Deg C)"), "Temperature vs time", "Temperature (°C)", "temperature.png"),
-            (("Mass Flowrate(g/min)",), "Mass flow rate vs time", "Mass flow rate (g/min)", "mass_flow_rate.png"),
+            (("P1(PSI)", "P2(PSI)"), "Pressure Vs. Time", "Pressure (PSI)", "pressure.png"),
+            (("T1(Deg C)", "T2(Deg C)"), "Temperature Vs. Time", "Temperature (°C)", "temperature.png"),
+            (("Mass Flowrate(g/min)",), "Mass Flow Rate Vs. Time", "Mass Flow Rate (g/min)", "mass_flow_rate.png"),
         )
         for columns, title, ylabel, filename in graphs:
             save_graph(

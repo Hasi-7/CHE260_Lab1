@@ -7,7 +7,9 @@
 \usepackage{graphicx}
 \usepackage{float}
 \usepackage{booktabs}
-\usepackage[font={normalsize,stretch=2},labelfont=bf]{caption}
+\usepackage[labelfont=bf]{caption}
+\DeclareCaptionFont{reportspacing}{\doublespacing}
+\captionsetup{font={normalsize,reportspacing},skip=6pt}
 \usepackage[hidelinks]{hyperref}
 
 \doublespacing
@@ -58,6 +60,12 @@
 \setlength{\intextsep}{10pt}
 \setlength{\textfloatsep}{10pt}
 \setlength{\floatsep}{10pt}
+% Stack float-only columns from the top instead of stretching gaps between plots.
+\makeatletter
+\setlength{\@fptop}{0pt}
+\setlength{\@fpsep}{12pt}
+\setlength{\@fpbot}{0pt plus 1fil}
+\makeatother
 
 \section{Introduction}
 
@@ -69,7 +77,7 @@ direct connection between macroscopic and particle level
 properties. A principal example of this is the Ideal Gas Law.
 The Law was first derived in 1834 by Benoît Paul Émile Clapeyron
 who combined several empirical laws including Boyle's Law and
-Charles's Law [1]. The most common way to write this law is:
+Charles's Law~\cite{clapeyron1834}. The most common way to write this law is:
 \begin{equation}
     PV = NR_uT
 \end{equation}
@@ -93,19 +101,19 @@ then the formula can be rearranged to
 
 Where the new $R$ constant is the gas constant $R_u$
 divided by the molar mass of the gas. For Air this value
-is $287~\mathrm{J/(kg\cdot K)}$ [2]. This is important for
+is $287~\mathrm{J/(kg\cdot K)}$~\cite{kleeman1928}. This is important for
 this experiment as the mass of the air can be calculated
 through the measured mass flow rate. In an ``ideal gas''
 as the law describes, particles move stochastically and
 independently of each other, only interacting through
 elastic collisions which conserve both momentum and
-kinetic energy [3].
+kinetic energy~\cite{luder1968}.
 
 \subsection[Thermodynamic State Properties and Path Independence]{Thermodynamic State\newline Properties and Path Independence}
 
 A Thermodynamic property is something which affects the
 energy of the system that can be measured without knowing
-the previous state of the system [4]. These properties
+the previous state of the system~\cite{chandra2016}. These properties
 are used to describe the thermodynamic state of the system,
 these include pressure, temperature, volume, mass, and
 density. The properties listed also only depend on the
@@ -125,7 +133,7 @@ conditions.
 This is described through the First Law of Thermodynamics
 which states that energy is the change in internal energy
 of a closed system is equal to the heat transferred into
-the system subtracted by the work done by the system [4].
+the system subtracted by the work done by the system~\cite{chandra2016}.
 Because the total volume of the system in the lab is
 constant the change in internal energy is equivalent
 to the net heat transfer.
@@ -136,7 +144,7 @@ Finally another important characteristic of gases is
 their compressibility which describes how their volume
 or density changes in response to variations in pressure.
 Unlike liquids and solids, gases are highly compressible
-due to the large distance between molecules [5].
+due to the large distance between molecules~\cite{alraeei2020}.
 
 In this experiment the two tanks have a constant volume
 throughout the process. Because of this the changes in
@@ -156,16 +164,16 @@ intermolecular forces between them are negligible.
 
 \subsection{Part 1: Path Independence and Tank Volume Ratio}
 
-Part 1 of the lab discusses the comparison between the movement of air between two identical volume tanks, 
-one with a gauge pressure of 40 PSI to another with a gauge pressure of 0-PSI.\@ The main point of comparison
-is the differences in a slow equalization of pressure versus a rapid equalization of pressure.
-
+Part 1 of the lab discusses the comparison between the movement of air through two tanks with identical volume, where
+one has a gauge pressure of 40 PSI to another with a gauge pressure of 0 PSI.\@ The main point of comparison
+is to find the differences in a slow equalization of pressure versus a rapid equalization of pressure, particularly to prove that the volume ratio is close to 1,
+thus showing that the tanks have identical volume.
 
 \subsubsection{Processed Results: Rapid and Slow Expansion}
 Figures~\ref{fig:part1a-pressure}--\ref{fig:part1a-temperature} show the measured pressure and temperature histories for the rapid and slow expansions.
 \begin{figure}[!htbp]
     \centering
-    \includegraphics[width=0.82\linewidth,height=0.27\textheight,keepaspectratio]{lab-part1a_plots/pressure.png}
+    \includegraphics[width=\linewidth]{lab-part1a_plots/pressure.png}
     \caption{Tank pressures during the Part 1a rapid expansion.}
     \label{fig:part1a-pressure}
 \end{figure}
@@ -173,7 +181,7 @@ Figures~\ref{fig:part1a-pressure}--\ref{fig:part1a-temperature} show the measure
 
 \begin{figure}[!htbp]
     \centering
-    \includegraphics[width=0.82\linewidth,height=0.27\textheight,keepaspectratio]{lab-part1a_plots/temperature.png}
+    \includegraphics[width=\linewidth]{lab-part1a_plots/temperature.png}
     \caption{Tank temperatures during the Part 1a rapid expansion.}
     \label{fig:part1a-temperature}
 \end{figure}
@@ -201,11 +209,14 @@ Using these values with Ideal Gas Law, we can determine the propotionality of pr
 show the pressures and temperatures of both the left and right tank during the slow equailization of pressure part of the lab.
 \begin{figure}[!htb]
     \centering
-    \includegraphics[width=0.82\linewidth,height=0.27\textheight,keepaspectratio]{lab-part1b_plots/pressure.png}
+    \includegraphics[width=\linewidth]{lab-part1b_plots/pressure.png}
     \caption{Tank pressures during the Part 1b slow expansion.}
     \label{fig:part1b-pressure}
-    \par\vspace{12pt}
-    \includegraphics[width=0.82\linewidth,height=0.27\textheight,keepaspectratio]{lab-part1b_plots/temperature.png}
+\end{figure}
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=\linewidth]{lab-part1b_plots/temperature.png}
     \caption{Tank temperatures during the Part 1b slow expansion.}
     \label{fig:part1b-temperature}
 \end{figure}
@@ -308,6 +319,20 @@ Part 2 of the lab discusses on measuring mass and volume of the system utilizing
 Figures~\ref{fig:part2-pressure}--\ref{fig:part2-temperature} show the measured tank pressures and temperatures during Part 2.
 % Identify the integration interval and the states used in calculations.
 
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=\linewidth]{lab-part2_plots/pressure.png}
+    \caption{Tank pressures during Part 2.}
+    \label{fig:part2-pressure}
+\end{figure}
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=\linewidth]{lab-part2_plots/temperature.png}
+    \caption{Tank temperatures during Part 2.}
+    \label{fig:part2-temperature}
+\end{figure}
+
 \subsubsection{Initial Mass and Tank Volume}
 % Part 2, Question 1: space for mass-flow integration and calculations.
 % Distinguish initial mass, added mass, and final mass in your analysis.
@@ -317,18 +342,27 @@ Figures~\ref{fig:part2-pressure}--\ref{fig:part2-temperature} show the measured 
 
 Figure~\ref{fig:part2-flow} shows the measured mass flow rate used in the added-mass calculation.
 
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=\linewidth]{lab-part2_plots/mass_flow_rate.png}
+    \caption{Mass flow rate during Part 2.}
+    \label{fig:part2-flow}
+\end{figure}
+
 Knowing that all added mass is measured by the sensor, we can calculate the added mass in the left tank as the integral of the mass flow rate - time graph in Figure~\ref{fig:part2-flow}. Using the trapezoid rule with Riemann Sums, we can find that the total mass inside the tank is 23.259g. \@
 
 Since the mass inside the system after any time is known, we can create a system of equations to calculate V and initial mass. \@
-\[
-\begin{gathered}
+% Allow this system to continue in the next column instead of leaving a large gap.
+\begingroup
+\allowdisplaybreaks[4]
+\begin{gather*}
     PV = (m_i + \delta m)RT \\
     P_{\mathrm{gauge}}(30) = 17.6,\quad \delta m(30) = 09.201 \\
     T(30) = 30.1,\quad R = 287 \\
     P_{\mathrm{gauge}}(50) = 38.9,\quad \delta m(50) = 23.259 \\
     T(50) = 28.2,\quad R = 287
-\end{gathered}
-\]
+\end{gather*}
+\endgroup
 
 By using these points and the equation, adjusting for units, I can solve the system of equations and resolve that $V = 0.008201\,\mathrm{m}^3$ or $8.201\,\mathrm{L}$ and that the initial mass is $11.712\,\mathrm{g}$
 
@@ -342,29 +376,6 @@ There are several key sources of errors and limitations on this section of the l
 When setting the pressure of the system to 40 PSI, we were reliant on a teammate manually checking the gauge pressure. \@ This is limited by human reaction time and uncertainty in the gauge pressure reading, both due to parallax error and uncertainty in measurements. \@ Thus, there was a lot of error with setting the initial pressure to exactly 40 PSI. \@ This is seen through the sensor data which showed that the pressure was slightly below our target of 40 PSI. \@
 
 Additionally, sensor data displayed that the mass flow rate was not completely constant at 50 g/s, even when temperature and pressure have stabilized for the air in the tank. \@
-
-\suppressfloats[t]
-\begin{figure}[!htb]
-    \centering
-    \includegraphics[width=0.82\linewidth,height=0.27\textheight,keepaspectratio]{lab-part2_plots/pressure.png}
-    \caption{Tank pressures during Part 2.}
-    \label{fig:part2-pressure}
-\end{figure}
-
-\begin{figure}[!htb]
-    \centering
-    \includegraphics[width=0.82\linewidth,height=0.27\textheight,keepaspectratio]{lab-part2_plots/temperature.png}
-    \caption{Tank temperatures during Part 2.}
-    \label{fig:part2-temperature}
-\end{figure}
-
-\begin{figure}[!htb]
-    \centering
-    \includegraphics[width=0.82\linewidth,height=0.27\textheight,keepaspectratio]{lab-part2_plots/mass_flow_rate.png}
-    \caption{Mass flow rate during Part 2.}
-    \label{fig:part2-flow}
-\end{figure}
-
 
 \subsubsection{Effect of Air Compressibility}
 
@@ -421,17 +432,29 @@ During lab 1, we tested the behavior of mixing gasses with the same initial cond
 
 During lab 2, we were able to calculate the mass of initial air in the tank and volume of the tank given the mass added and measured pressure/temperature values. \@ Additionally, we measured the limitations of the ideal gas model and proved how the ideal gas model breaks down at high pressures, as shown by the compressibility of air. \@ Under the ideal gas model, the compressibility should be constant but under the conditions imposed, the compressibility of air was variable as pressure increased. \@
 
-\section*{References}
-\phantomsection
-% Replace this heading with thebibliography when adding references:
-% \begin{thebibliography}{99}
-% \bibitem{key} ...
-% \end{thebibliography}
-% Cite using \cite{key}; number sources in order of first appearance.
-% Journal: Author(s), Journal Title. Volume (Year) Page number.
-% Book: Author(s), Book Title. Publisher, City, Year, Page(s).
-% Website: website address.
-% Course notes: Author or Course Name. Title of Document. Year Accessed.
+\begin{thebibliography}{5}
+\bibitem{clapeyron1834}
+Beno\^it-Paul \'{E}mile Clapeyron, ``Memoir sur la puissance motrice de la chaleur,''
+\textit{Journal de l'\'{E}cole royale polytechnique} (1834), pp.~153--190.
+
+\bibitem{kleeman1928}
+R.~D. Kleeman, ``CXXIII. On changes that may take place in the inter-atomic internal energy according to thermodynamics, and catalytic action,''
+\textit{The London, Edinburgh, and Dublin Philosophical Magazine and Journal of Science},
+vol.~5, no.~33 (1928), pp.~1191--1198.
+
+\bibitem{luder1968}
+W.~F. Luder, ``Ideal gas definition,'' \textit{Journal of Chemical Education},
+vol.~45, no.~5 (1968), p.~351.
+
+\bibitem{chandra2016}
+Sanjeev Chandra, \textit{Energy, Entropy and Engines: An Introduction to Thermodynamics}.
+John Wiley \& Sons, 2016.
+
+\bibitem{alraeei2020}
+Marwan Al-Raeei and Moustafa Sayem El-Daher, ``Formula of compressibility and using it for air, noble gases, some hydrocarbons gases, some diatomic simple gases and some other fluids,''
+\textit{BMC Chemistry}, vol.~14, no.~1 (2020), article~47.
+\end{thebibliography}
+
 % Acknowledge AI-assisted outlining in the references using:
 % Tool Name, URL, Date used, Description how it was used, Prompt(s) used.
 % Record the actual tool/date and the prompt used for this template.

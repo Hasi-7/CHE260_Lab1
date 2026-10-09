@@ -1,0 +1,9 @@
+[1]Clapeyron, Benoit-Paul Emile. "Memoir sur la puissance motrice de la chaleur." Journal de l'École royale polytechnique (1834): 153-190.
+
+[2]Kleeman, R. D. "CXXIII. On changes that may take place in the inter-atomic internal energy according to thermodynamics, and catalytic action." The London, Edinburgh, and Dublin Philosophical Magazine and Journal of Science 5.33 (1928): 1191-1198.
+
+[3]Luder, W. F. "Ideal gas definition." Journal of Chemical Education 45.5 (1968): 351.
+
+[4] Chandra, Sanjeev. Energy, Entropy and Engines: An Introduction to Thermodynamics. John Wiley & Sons, 2016.
+
+[5]Al-Raeei, Marwan, and Moustafa Sayem El-Daher. "Formula of compressibility and using it for air, noble gases, some hydrocarbons gases, some diatomic simple gases and some other fluids." BMC chemistry 14.1 (2020): 47.
