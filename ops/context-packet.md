@@ -55,3 +55,10 @@
 - Put pressure and temperature together under processed results; put mass flow under initial mass and tank volume before its integration discussion.
 - Preserve numerical claims and existing prose, adding captions, unique labels, and figure references.
 - Build twice into `out/` to verify images and references.
+
+## Part 2 reading order and equation spacing (October 8, 2026)
+
+- Goal: keep the complete mass-and-volume explanation before Part 2 graphs, tighten its two formulas, and place heading 2.2.3 in the left column.
+- Move Part 2 figure blocks after the calculation and use fixed source-order placement to prevent graphs from interrupting paragraphs.
+- Combine the two formulas into one compact gathered display; preserve prose and values.
+- Verify the compiled PDF's text order and heading position, adjusting placement as needed.

@@ -4,6 +4,7 @@
 \usepackage{setspace}
 \usepackage{amsmath,amssymb}
 \usepackage{graphicx}
+\usepackage{float}
 \usepackage{booktabs}
 \usepackage[font={normalsize,stretch=2},labelfont=bf]{caption}
 \usepackage[hidelinks]{hyperref}
@@ -349,17 +350,6 @@ and~\ref{fig:part1a-temperature}, we obtain the following values:
 Figures~\ref{fig:part2-pressure}--\ref{fig:part2-temperature} show the measured tank pressures and temperatures during Part 2.
 % Identify the integration interval and the states used in calculations.
 
-\begin{figure}[!htb]
-    \centering
-    \includegraphics[width=0.82\linewidth,height=0.27\textheight,keepaspectratio]{lab-part2_plots/pressure.png}
-    \caption{Tank pressures during Part 2.}
-    \label{fig:part2-pressure}
-    \par\vspace{12pt}
-    \includegraphics[width=0.82\linewidth,height=0.27\textheight,keepaspectratio]{lab-part2_plots/temperature.png}
-    \caption{Tank temperatures during Part 2.}
-    \label{fig:part2-temperature}
-\end{figure}
-
 \subsubsection{Initial Mass and Tank Volume}
 % Part 2, Question 1: space for mass-flow integration and calculations.
 % Distinguish initial mass, added mass, and final mass in your analysis.
@@ -369,19 +359,15 @@ Figures~\ref{fig:part2-pressure}--\ref{fig:part2-temperature} show the measured 
 
 Figure~\ref{fig:part2-flow} shows the measured mass flow rate used in the added-mass calculation.
 
-\begin{figure}[!htb]
-    \centering
-    \includegraphics[width=0.82\linewidth,height=0.27\textheight,keepaspectratio]{lab-part2_plots/mass_flow_rate.png}
-    \caption{Mass flow rate during Part 2.}
-    \label{fig:part2-flow}
-\end{figure}
-
 Knowing that all added mass is measured by the sensor, we can calculate the added mass in the left tank as the integral of the mass flow rate - time graph in Figure~\ref{fig:part2-flow}. Using numerical methods, we can find that the total mass inside the tank is 23.259g. \@
 
 Since the mass inside the system after any time is known, we can create a system of equations to calculate V and initial mass. \@
-$$ PV = (m_i + \delta m)RT $$
-$$ P(30) = 17.6$$
-
+\[
+\begin{gathered}
+    PV = (m_i + \delta m)RT \\
+    P(30) = 17.6
+\end{gathered}
+\]
 
 \subsubsection{Sources of Error and Limitations}
 
@@ -393,6 +379,25 @@ There are several key sources of errors and limitations on this section of the l
 When setting the pressure of the system to 40 PSI, we were reliant on a teammate manually checking the gauge pressure. \@ This is limited by human reaction time and uncertainty in the gauge pressure reading, both due to parallax error and uncertainty in measurements. \@ Thus, there was a lot of error with setting the initial pressure to exactly 40 PSI. \@ This is seen through the sensor data which showed that the pressure was slightly below our target of 40 PSI. \@
 
 Additionally, sensor data displayed that the mass flow rate was not completely constant at 50 g/s, even when temperature and pressure have stabilized for the air in the tank. \@
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.82\linewidth,height=0.27\textheight,keepaspectratio]{lab-part2_plots/pressure.png}
+    \caption{Tank pressures during Part 2.}
+    \label{fig:part2-pressure}
+    \par\vspace{12pt}
+    \includegraphics[width=0.82\linewidth,height=0.27\textheight,keepaspectratio]{lab-part2_plots/temperature.png}
+    \caption{Tank temperatures during Part 2.}
+    \label{fig:part2-temperature}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.82\linewidth,height=0.27\textheight,keepaspectratio]{lab-part2_plots/mass_flow_rate.png}
+    \caption{Mass flow rate during Part 2.}
+    \label{fig:part2-flow}
+\end{figure}
+
 
 \subsubsection{Effect of Air Compressibility}
 
