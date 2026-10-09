@@ -60,15 +60,13 @@ is the differences in a slow equalization of pressure versus a rapid equalizatio
 then prove that the left and right tanks have the equal volumes. 
 
 \subsubsection{Processed Results: Rapid and Slow Expansion}
-Figure~\ref{fig:part1a-pressure}--\ref{fig:part1a-temperature} shows the pressure of both tanks over the experiment's total time. \@
+Figures~\ref{fig:part1a-pressure}--\ref{fig:part1a-temperature} shows the pressure and temperature of both tanks over the experiment's total time. \@
 \begin{figure}[!htbp]
     \centering
     \includegraphics[width=0.82\linewidth,height=0.27\textheight,keepaspectratio]{lab-part1a_plots/pressure.png}
     \caption{Tank pressures during the Part 1a rapid expansion.}
     \label{fig:part1a-pressure}
 \end{figure}
-
-
 \begin{figure}[!htbp]
     \centering
     \includegraphics[width=0.82\linewidth,height=0.27\textheight,keepaspectratio]{lab-part1a_plots/temperature.png}
@@ -76,12 +74,22 @@ Figure~\ref{fig:part1a-pressure}--\ref{fig:part1a-temperature} shows the pressur
     \label{fig:part1a-temperature}
 \end{figure}
 
-\begin{figure}[!htbp]
-    \centering
-    \includegraphics[width=0.82\linewidth,height=0.27\textheight,keepaspectratio]{lab-part1a_plots/mass_flow_rate.png}
-    \caption{Mass flow rate during the Part 1a rapid expansion.}
-    \label{fig:part1a-flow}
-\end{figure}
+Taking averages across the marked time ranges on Figures~\ref{fig:part1a-pressure}--\ref{fig:part1a-temperature} for final pressure and temperature values,
+we obtain the following values:
+
+\[P_{2R}=24.13\text{ PSI} \text{, } P_{2L}=24.03\text{ PSI}\]
+\[T_{2R}=28.33^\circ\text{C} \text{, } T_{2L}=25.25^\circ\text{C}\]
+
+Using these values with Ideal Gas Law, we can determine the propotionality of pressure, volume and temperature between the two tanks at the final state.\@
+ It can be assumed that the ratio of the final pressure, volume and temperature of the left tank is equal to the final pressure, volume and temperature of the right tank
+ since both tanks are in equilibrium with each other at the final values.
+
+\[\frac{P_{2L}V_{L}}{T_{2L}}=\frac{P_{2R}V_{R}}{T_{2R}}\]
+\[\frac{V_{L}}{V_{R}}=\frac{P_{2R}}{P_{2L}} \cdot \frac{T_{2L}}{T_{2R}}\]
+\[\frac{V_{L}}{V_{R}}=\frac{24.13}{24.03} \cdot \frac{25.25}{28.33}\]
+\[\frac{V_{L}}{V_{R}}=0.895\]
+
+
 
 \begin{figure}[!htbp]
     \centering
@@ -95,13 +103,6 @@ Figure~\ref{fig:part1a-pressure}--\ref{fig:part1a-temperature} shows the pressur
     \includegraphics[width=0.82\linewidth,height=0.27\textheight,keepaspectratio]{lab-part1b_plots/temperature.png}
     \caption{Tank temperatures during the Part 1b slow expansion.}
     \label{fig:part1b-temperature}
-\end{figure}
-
-\begin{figure}[!htbp]
-    \centering
-    \includegraphics[width=0.82\linewidth,height=0.27\textheight,keepaspectratio]{lab-part1b_plots/mass_flow_rate.png}
-    \caption{Mass flow rate during the Part 1b slow expansion.}
-    \label{fig:part1b-flow}
 \end{figure}
 
 \clearpage
