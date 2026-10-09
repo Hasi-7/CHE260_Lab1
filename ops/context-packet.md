@@ -27,3 +27,10 @@
 - Input: `lab-part1a`, `lab-part1b`; existing `analyze_lab.py` already supports explicit mass-flow integration windows. Keep those windows independent of state averaging.
 - Candidate windows from plotted traces: Part 1a initial 108–115 s, final 175–185 s; Part 1b initial 125–145 s, final 760–779 s. The slow run still has unequal tank pressures at the end, so label its final range as recorded, not fully equilibrated.
 - Expose windows as explicit CLI parameters to allow revision; regenerate both summaries and graphics, verify representative counts and output.
+
+## LaTeX formatting check and build (October 8, 2026)
+
+- Goal: check `lab_report.tex` formatting and build the report PDF.
+- Normalize paragraph breaks, sentence spacing, inline variables, and display equations using the existing `amsmath` package; preserve the author's scientific claims and numerical expressions for separate review.
+- Keep 12 pt type, double spacing, one-inch margins, and the existing figure captions and labels.
+- Build with two pdfLaTeX passes into `out/`, the existing editor build directory, and check page count, references, and box warnings.
