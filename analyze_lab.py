@@ -95,6 +95,20 @@ def parse_section(text: str) -> tuple[float, float]:
     return start, end
 
 
+def state_averages(
+    measurements: list[dict[str, float]], window: tuple[float, float]
+) -> tuple[int, dict[str, float]]:
+    """Average each tank's sampled pressure and temperature within a time window."""
+    start, end = window
+    if start < measurements[0]["Time(s)"] or end > measurements[-1]["Time(s)"]:
+        raise ValueError("State window must lie within the recorded times")
+    rows = [row for row in measurements if start <= row["Time(s)"] <= end]
+    if len(rows) < 2:
+        raise ValueError("State window must contain at least two measurements")
+    columns = ("P1(PSI)", "T1(Deg C)", "P2(PSI)", "T2(Deg C)")
+    return len(rows), {column: sum(row[column] for row in rows) / len(rows) for column in columns}
+
+
 def save_graph(
     measurements: list[dict[str, float]],
     columns: tuple[str, ...],
@@ -102,6 +116,7 @@ def save_graph(
     ylabel: str,
     destination: Path,
     sections: list[tuple[float, float]] | None = None,
+    state_windows: dict[str, tuple[float, float]] | None = None,
 ) -> None:
     times = [row["Time(s)"] for row in measurements]
     figure, axis = plt.subplots(figsize=(10, 5))
@@ -109,9 +124,13 @@ def save_graph(
         axis.plot(times, [row[column] for row in measurements], label=column)
     for index, (start, end) in enumerate(sections or [], start=1):
         axis.axvspan(start, end, alpha=0.12, label=f"Section {index}")
+    for label, (start, end) in (state_windows or {}).items():
+        color = "tab:green" if label == "Initial" else "tab:red"
+        axis.axvline(start, color=color, linestyle=":", linewidth=2, label=f"{label} window")
+        axis.axvline(end, color=color, linestyle=":", linewidth=2)
     axis.set(title=title, xlabel="Time (s)", ylabel=ylabel)
     axis.grid(True, alpha=0.3)
-    if len(columns) > 1 or sections:
+    if len(columns) > 1 or sections or state_windows:
         axis.legend()
     figure.tight_layout()
     figure.savefig(destination, dpi=150)
@@ -134,6 +153,14 @@ def main() -> None:
         metavar="START:END",
         help="Integrate mass flow in this time range (seconds); repeat for multiple sections",
     )
+    parser.add_argument(
+        "--initial-window", type=parse_section, metavar="START:END",
+        help="Time range (seconds) to average initial P1, T1, P2 and T2",
+    )
+    parser.add_argument(
+        "--final-window", type=parse_section, metavar="START:END",
+        help="Time range (seconds) to average final recorded P1, T1, P2 and T2",
+    )
     args = parser.parse_args()
 
     try:
@@ -142,6 +169,15 @@ def main() -> None:
             (start, end, mass_from_flow(measurements, start, end))
             for start, end in args.section
         ]
+        state_windows = {
+            label: window for label, window in (
+                ("Initial", args.initial_window), ("Final", args.final_window)
+            ) if window is not None
+        }
+        state_results = {
+            label: state_averages(measurements, window)
+            for label, window in state_windows.items()
+        }
         output_dir = args.output_dir or args.file.parent / f"{args.file.stem}_plots"
         output_dir.mkdir(parents=True, exist_ok=True)
         graphs = (
@@ -153,6 +189,7 @@ def main() -> None:
             save_graph(
                 measurements, columns, title, ylabel, output_dir / filename,
                 args.section if filename == "mass_flow_rate.png" else None,
+                state_windows if filename != "mass_flow_rate.png" else None,
             )
 
         summary = (
@@ -161,6 +198,15 @@ def main() -> None:
         )
         for index, (start, end, mass_g) in enumerate(section_results, start=1):
             summary += f"Section {index} ({start:g}-{end:g} s): {mass_g:.6f} g\n"
+        for label, (start, end) in state_windows.items():
+            count, averages = state_results[label]
+            summary += f"{label} recorded window ({start:g}-{end:g} s; {count} samples):\n"
+            summary += (
+                f"  Left tank: P1 = {averages['P1(PSI)']:.2f} psig, "
+                f"T1 = {averages['T1(Deg C)']:.2f} °C\n"
+                f"  Right tank: P2 = {averages['P2(PSI)']:.2f} psig, "
+                f"T2 = {averages['T2(Deg C)']:.2f} °C\n"
+            )
         summary += f"Graphs saved to {output_dir}\n"
         (output_dir / "summary.txt").write_text(summary, encoding="utf-8")
     except (OSError, ValueError) as error:

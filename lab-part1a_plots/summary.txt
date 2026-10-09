@@ -2,4 +2,10 @@ Loaded 1858 measurements from lab-part1a
 Mass-flow integral: 33.004883 g
 Section 1 (8.3-45.7 s): 23.575292 g
 Section 2 (71.2-90.9 s): 9.429600 g
+Initial recorded window (108-115 s; 71 samples):
+  Left tank: P1 = 38.74 psig, T1 = 25.69 °C
+  Right tank: P2 = -2.88 psig, T2 = 24.27 °C
+Final recorded window (175-185 s; 101 samples):
+  Left tank: P1 = 24.03 psig, T1 = 25.25 °C
+  Right tank: P2 = 24.13 psig, T2 = 28.33 °C
 Graphs saved to lab-part1a_plots

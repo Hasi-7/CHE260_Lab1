@@ -15,6 +15,8 @@ python analyze_lab.py lab-part1a
 python analyze_lab.py measurements.csv --output-dir results
 python analyze_lab.py lab-part1a --section 8.3:45.7 --section 71.2:90.9
 python analyze_lab.py lab-part1b --section 16.1:53.4 --section 77.6:104.2
+python analyze_lab.py lab-part1a --section 8.3:45.7 --section 71.2:90.9 --initial-window 108:115 --final-window 175:185
+python analyze_lab.py lab-part1b --section 16.1:53.4 --section 77.6:104.2 --initial-window 125:145 --final-window 760:779
 ```
 
 The input must have columns `Time(s)`, `T1(Deg C)`, `T2(Deg C)`, `P1(PSI)`,
@@ -37,6 +39,15 @@ results appear in both the terminal and `summary.txt`, and the selected time
 ranges are shaded on the mass-flow graph. When a boundary falls between two
 measurements, the flow there is linearly interpolated. The full-recording
 integral is always reported as well.
+
+Use `--initial-window START:END` and `--final-window START:END` to average both
+tanks' recorded gauge pressures (psig) and temperatures (°C) over selected
+time ranges. The summary lists each range, its sample count, and four means;
+green and red dotted boundary lines mark the ranges on the pressure and
+temperature graphs. These options do not change the mass-flow integration.
+The example final window for Part 1b is the last recorded range: its two
+pressures have not quite converged, so it should not be treated as a confirmed
+fully equilibrated state.
 
 ## LaTeX lab report: first-time setup
 
