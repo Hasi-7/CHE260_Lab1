@@ -75,3 +75,4 @@
 - Goal: retain a modest visible text-to-equation gap and readable equation-row spacing while preserving double-spaced prose.
 - Set display padding to 6 pt (short-line padding 4 pt) and math row separation to 6 pt; keep each volume ratio's numeric substitution with its final result.
 - Correct the user-identified expression to `PV = ZRT` and compile twice to verify layout and references.
+- Merge verification: preserved the incoming rewritten introduction, Part 2 state values/results, compressibility discussion, and conclusion. Wrapped new long state-value lines and restored math delimiters needed for compilation. The combined report builds to 10 pages without unresolved references or overfull boxes.
