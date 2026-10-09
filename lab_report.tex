@@ -54,180 +54,93 @@
 
 \subsection{Ideal Gas Law}
 
-Gases provide a fundamental foundation for understanding
-chemistry, and the quantitative laws governing their behavior
-establish a direct connection between macroscopic and
-particle-level properties. A principal example of this
-relationship is the Ideal Gas Law. The law was formulated
-in 1834 by Benoît Paul Émile Clapeyron, who combined
-empirical relationships including Boyle's Law and
-Charles's Law [1]. The most common formulation is:
+Gases are a fundamental foundation for understanding chemistry
+and the quantitative laws of their behavior provide us with a
+direct connection between macroscopic and particle level
+properties. A principal example of this is the Ideal Gas Law.
+The Law was first derived in 1834 by Benoît Paul Émile Clapeyron
+who combined several empirical laws including Boyle's Law and
+Charles's Law [1]. The most common way to write this law is:
 
 \begin{equation}
     PV = NR_uT
 \end{equation}
 
-where $P$ is the absolute pressure of the system, $V$ is
-the volume, $N$ is the number of moles of gas, $R_u$ is
-the universal gas constant
-($8.314~\mathrm{J/(mol\cdot K)}$), and $T$ is the
-absolute temperature expressed in Kelvin.
-
-For this experiment, the absolute pressure is calculated
-using:
-
-\begin{equation}
-    P_{\mathrm{abs}} =
-    P_{\mathrm{gauge}} + P_{\mathrm{atm}}
-\end{equation}
-
-where $P_{\mathrm{gauge}}$ is the pressure measured by
-the gauge and $P_{\mathrm{atm}}$ is the atmospheric
-pressure measured in the laboratory.
-
-Since the number of moles is equal to the total mass of
-the gas divided by its molar mass, the Ideal Gas Law
-can be rearranged as:
+Where $P$ is the pressure measured in the system, for this
+experiment the Pressure value is calculated as
+$P = P_{\mathrm{gauge}} + P_{\mathrm{atm}}$ where
+$P_{\mathrm{gauge}}$ is the pressure measured on the gauge
+and $P_{\mathrm{atm}}$ is the atmospheric pressure of the
+room the experiment took place in, $V$ is the volume of the
+system, $N$ is the amount of moles of gas present in the
+system, $R_u$ is the gas constant,
+$8.31.4~\mathrm{J\,mol^{-1}K^{-1}}$ and finally $T$
+is the temperature of the system expressed in Kelvin.
+By understanding that $N$ is the quotient of the total mass
+of the gas in the system and the molar mass of the gas(s),
+then the formula can be rearranged to
 
 \begin{equation}
     PV = mRT
 \end{equation}
 
-where $m$ is the mass of the gas and $R$ is the
-specific gas constant, obtained by dividing $R_u$ by
-the molar mass. For air, this value is approximately
-$287~\mathrm{J/(kg\cdot K)}$ [2].
+Where the new $R$ constant is the gas constant $R_u$
+divided by the molar mass of the gas. For Air this value
+is $287~\mathrm{J/(kg\cdot K)}$ [2]. This is important for
+this experiment as the mass of the air can be calculated
+through the measured mass flow rate. In an ``ideal gas''
+as the law describes, particles move stochastically and
+independently of each other, only interacting through
+elastic collisions which conserve both momentum and
+kinetic energy [3].
 
-This formulation is particularly important for this
-experiment because the mass of air introduced into the
-tank can be calculated from the measured mass flow rate.
+\subsection{Thermodynamic State Properties and Path Independence}
 
-Under the ideal gas model, particles are assumed to
-move randomly and independently, with negligible
-molecular volume and negligible intermolecular forces
-except during collisions. These collisions are assumed
-to be perfectly elastic, conserving both momentum
-and kinetic energy [3].
+A Thermodynamic property is something which affects the
+energy of the system that can be measured without knowing
+the previous state of the system [4]. These properties
+are used to describe the thermodynamic state of the system,
+these include pressure, temperature, volume, mass, and
+density. The properties listed also only depend on the
+current state of the system, these are called state
+properties and the principle is known as path independence.
 
-\subsection[Thermodynamic State Properties and Path Independence]{Thermodynamic State\newline Properties and Path Independence}
-
-To properly understand the Ideal Gas Law, it is also
-important to understand thermodynamic properties,
-particularly state properties. A thermodynamic property
-is a measurable or calculable macroscopic characteristic
-of a system whose value can be determined without
-knowing the previous history of the system [4].
-
-These properties describe the thermodynamic state of
-a system and include pressure, temperature, volume,
-mass, and density. Their values depend only on the
-current state of the system rather than the path taken
-to reach that state. This characteristic is known as
-path independence.
-
-This concept is especially important for this laboratory
-experiment, as the first part compares two different
-methods of equalizing pressure between interconnected
-tanks of air.
-
-In the first method, air is transferred rapidly through
-a solenoid valve, while in the second method, air is
-transferred gradually through a needle valve. Although
-the pressure and temperature histories may differ between
-these processes, both methods are expected to produce
-approximately the same final equilibrium conditions,
-provided the initial conditions and final constraints
-are equivalent.
-
-Path independence can also be demonstrated through
-the change in internal energy of a system:
-
-\begin{equation}
-    \Delta U = U_f - U_i
-\end{equation}
-
-where $U_f$ and $U_i$ represent the final and initial
-internal energies, respectively. Since internal energy
-is a state property, its change depends only on the
-initial and final thermodynamic states.
-
-This differs from heat transfer and work, which are
-path-dependent quantities.
+This concept is especially important for this lab, as
+the first part compares two different methods of equalizing
+pressure. In the first method, air is moved rapidly through a solenoid valve,
+while in the second method, air is transferred gradually
+through a needle valve. While intermidate sections of the processes
+may vary, both methods are expected to produce the same final equilibrium
+conditions.
 
 \subsection{Heat Transfer and the First Law of Thermodynamics}
 
-An important consideration when studying gas expansion
-is the transfer of energy between a system and its
-surroundings. This relationship is described by the
-First Law of Thermodynamics, which states that energy
-is conserved [4].
+This is described through the First Law of Thermodynamics
+which states that energy is the change in internal energy
+of a closed system is equal to the heat transferred into
+the system subtracted by the work done by the system [4].
+Because the total volume of the system in the lab is
+constant the change in internal energy is equivalent
+to the net heat transfer.
 
-For a closed system, ignoring changes in kinetic
-and potential energy, the First Law can be written as:
+\subsection{Air Compressibility}
 
-\begin{equation}
-    \Delta U = Q - W
-\end{equation}
+Finally another important characteristic of gases is
+their compressibility which describes how their volume
+or density changes in response to variations in pressure.
+Unlike liquids and solids, gases are highly compressible
+due to the large distance between molecules [5].
 
-where $\Delta U$ is the change in internal energy,
-$Q$ is the net heat transferred into the system,
-and $W$ is the work done by the system.
-
-In this experiment, the two connected rigid tanks
-can be treated as a single closed system. Since the
-total volume remains constant, there is no boundary
-work. Assuming negligible other work interactions,
-the First Law becomes:
-
-\begin{equation}
-    \Delta U = Q
-\end{equation}
-
-Heat transfer is particularly relevant when comparing
-the rapid and gradual pressure equalization methods.
-During rapid expansion through the solenoid valve,
-air moves between the tanks over a short
-period, limiting the time available for heat exchange
-with the surroundings.
-
-Becuase of this, temporary temperature differences may
-develop between the two tanks.
-
-On the other hand, gradual expansion through the needle
-valve provides more time for heat exchange with the
-surrounding environment, allowing the system to
-remain closer to thermal equilibrium through the
-process.
-
-Although the two methods may produce different
-temperature histories, they are expected to approach
-similar final equilibrium conditions.
-
-\subsection{Air Compressibility and Intermolecular Forces}
-
-Finally, another important characteristic of gases
-is their compressibility, which describes how their
-volume or density changes in response to variations
-in pressure.
-
-Unlike liquids and solids, gases are highly
-compressible due to the relatively large distances
-between their molecules [5].
-
-In this experiment, the two tanks are rigid, meaning
-their volumes remain constant throughout the process.
-Consequently, changes in pressure are associated
-with changes in the mass, density, and temperature
-of the air within each tank.
-
-This relationship can be described using the
-Ideal Gas Law, rearranged as:
+In this experiment the two tanks have a constant volume
+throughout the process. Because of this the changes in
+pressure are related to the changes in mass, density,
+and the temperature of the air in each tank. This
+relationship can be rearranged to be
 
 \begin{equation}
     \rho = \frac{P}{RT}
 \end{equation}
 
-where $\rho$ represents the density of air.
 
 However, the Ideal Gas Law assumes that the volume
 occupied by individual gas molecules and the
