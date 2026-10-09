@@ -62,3 +62,16 @@
 - Move Part 2 figure blocks after the calculation and use fixed source-order placement to prevent graphs from interrupting paragraphs.
 - Combine the two formulas into one compact gathered display; preserve prose and values.
 - Verify the compiled PDF's text order and heading position, adjusting placement as needed.
+
+## Reduce equation padding and column gaps (October 8, 2026)
+
+- Goal: tighten compressibility equations and use empty column space throughout the current report.
+- Reduce body display-math padding, combine consecutive formulas, and separate Part 2 fixed-position graph blocks so each can fit independently after the explanation.
+- Preserve double-spaced body text and scientific wording/values; repair the two existing unresolved Part 1 figure references.
+- Compile twice and inspect PDF text coordinates, page count, and warnings.
+
+## Consistent equation spacing and compressibility correction (October 8, 2026)
+
+- Goal: retain a modest visible text-to-equation gap and readable equation-row spacing while preserving double-spaced prose.
+- Set display padding to 6 pt (short-line padding 4 pt) and math row separation to 6 pt; keep each volume ratio's numeric substitution with its final result.
+- Correct the user-identified expression to `PV = ZRT` and compile twice to verify layout and references.

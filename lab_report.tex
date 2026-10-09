@@ -3,6 +3,7 @@
 \usepackage[margin=1in]{geometry}
 \usepackage{setspace}
 \usepackage{amsmath,amssymb}
+\allowdisplaybreaks[1]
 \usepackage{graphicx}
 \usepackage{float}
 \usepackage{booktabs}
@@ -49,6 +50,14 @@
 \twocolumn
 \raggedbottom
 \setlength{\emergencystretch}{2em}
+\setlength{\abovedisplayskip}{6pt}
+\setlength{\belowdisplayskip}{6pt}
+\setlength{\abovedisplayshortskip}{4pt}
+\setlength{\belowdisplayshortskip}{6pt}
+\setlength{\jot}{6pt}
+\setlength{\intextsep}{10pt}
+\setlength{\textfloatsep}{10pt}
+\setlength{\floatsep}{10pt}
 
 \section{Introduction}
 
@@ -62,7 +71,6 @@ relationship is the Ideal Gas Law. The law was formulated
 in 1834 by Benoît Paul Émile Clapeyron, who combined
 empirical relationships including Boyle's Law and
 Charles's Law [1]. The most common formulation is:
-
 \begin{equation}
     PV = NR_uT
 \end{equation}
@@ -75,7 +83,6 @@ absolute temperature expressed in Kelvin.
 
 For this experiment, the absolute pressure is calculated
 using:
-
 \begin{equation}
     P_{\mathrm{abs}} =
     P_{\mathrm{gauge}} + P_{\mathrm{atm}}
@@ -88,7 +95,6 @@ pressure measured in the laboratory.
 Since the number of moles is equal to the total mass of
 the gas divided by its molar mass, the Ideal Gas Law
 can be rearranged as:
-
 \begin{equation}
     PV = mRT
 \end{equation}
@@ -141,7 +147,6 @@ are equivalent.
 
 Path independence can also be demonstrated through
 the change in internal energy of a system:
-
 \begin{equation}
     \Delta U = U_f - U_i
 \end{equation}
@@ -164,7 +169,6 @@ is conserved [4].
 
 For a closed system, neglecting changes in kinetic
 and potential energy, the First Law can be written as:
-
 \begin{equation}
     \Delta U = Q - W
 \end{equation}
@@ -178,7 +182,6 @@ can be treated as a single closed system. Since the
 total volume remains constant, there is no boundary
 work. Assuming negligible other work interactions,
 the First Law becomes:
-
 \begin{equation}
     \Delta U = Q
 \end{equation}
@@ -222,7 +225,6 @@ of the air within each tank.
 
 This relationship can be described using the
 Ideal Gas Law, rearranged as:
-
 \begin{equation}
     \rho = \frac{P}{RT}
 \end{equation}
@@ -240,7 +242,6 @@ may deviate from the predictions of the Ideal Gas Law.
 
 These deviations can be quantified using the
 compressibility factor, $Z$:
-
 \begin{equation}
     Z = \frac{Pv}{RT}
 \end{equation}
@@ -292,18 +293,22 @@ Figures~\ref{fig:part1a-pressure}--\ref{fig:part1a-temperature} show the measure
 
 Taking averages across the marked time ranges on Figures~\ref{fig:part1a-pressure}--\ref{fig:part1a-temperature} for final pressure and temperature values,
 we obtain the following values:
-
-\[P_{2R}=24.13\text{ PSI} \text{, } P_{2L}=24.03\text{ PSI}\]
-\[T_{2R}=28.33^\circ\text{C} \text{, } T_{2L}=25.25^\circ\text{C}\]
+\[
+\begin{gathered}
+P_{2R}=24.13\text{ PSI} \text{, } P_{2L}=24.03\text{ PSI} \\
+T_{2R}=28.33^\circ\text{C} \text{, } T_{2L}=25.25^\circ\text{C}
+\end{gathered}
+\]
 
 Using these values with Ideal Gas Law, we can determine the propotionality of pressure, volume and temperature between the two tanks at the final state.\@
  It can be assumed that the ratio of the final pressure, volume and temperature of the left tank is equal to the final pressure, volume and temperature of the right tank
  since both tanks are in equilibrium with each other at the final values. The following calculations show the resultant volume ratio of the rapid equailization of pressure
-
-\[\frac{P_{2L}V_{L}}{T_{2L}}=\frac{P_{2R}V_{R}}{T_{2R}}\]
-\[\frac{V_{L}}{V_{R}}=\frac{P_{2R}}{P_{2L}} \cdot \frac{T_{2L}}{T_{2R}}\]
-\[\frac{V_{L}}{V_{R}}=\frac{24.13}{24.03} \cdot \frac{25.25}{28.33}\]
-\[\frac{V_{L}}{V_{R}}=0.895\]
+\begin{gather*}
+\frac{P_{2L}V_{L}}{T_{2L}}=\frac{P_{2R}V_{R}}{T_{2R}} \\
+\frac{V_{L}}{V_{R}}=\frac{P_{2R}}{P_{2L}} \cdot \frac{T_{2L}}{T_{2R}} \\
+\frac{V_{L}}{V_{R}}=\frac{24.13}{24.03} \cdot \frac{25.25}{28.33} \\*
+\frac{V_{L}}{V_{R}}=0.895
+\end{gather*}
 
 \noindent Similar to Figures~\ref{fig:part1a-pressure}--\ref{fig:part1a-temperature}, the following Figures~\ref{fig:part1b-pressure}--\ref{fig:part1b-temperature} 
 show the pressures and temperatures of both the left and right tank during the slow equailization of pressure part of the lab.
@@ -320,15 +325,19 @@ show the pressures and temperatures of both the left and right tank during the s
 
 \noindent Taking averages of the final pressures and temperatures at the marked time ranges on the graphs, similar to Figures~\ref{fig:part1a-pressure} 
 and~\ref{fig:part1a-temperature}, we obtain the following values:
-
-\[P_{2R}=22.94\text{ PSI} \text{, } P_{2L}=24.04\text{ PSI}\]
-\[T_{2R}=26.70^\circ\text{C} \text{, } T_{2L}=25.60^\circ\text{C}\]
+\[
+\begin{gathered}
+P_{2R}=22.94\text{ PSI} \text{, } P_{2L}=24.04\text{ PSI} \\
+T_{2R}=26.70^\circ\text{C} \text{, } T_{2L}=25.60^\circ\text{C}
+\end{gathered}
+\]
 
 \noindent Then applying the Ideal Gas Law in the same way, we obtain the following:
-
-\[\frac{V_{L}}{V_{R}}=\frac{P_{2R}}{P_{2L}} \cdot \frac{T_{2L}}{T_{2R}}\]
-\[\frac{V_{L}}{V_{R}}=\frac{22.94}{24.04} \cdot \frac{25.60}{26.70}\]
-\[\frac{V_{L}}{V_{R}}=0.915\]
+\begin{gather*}
+\frac{V_{L}}{V_{R}}=\frac{P_{2R}}{P_{2L}} \cdot \frac{T_{2L}}{T_{2R}} \\
+\frac{V_{L}}{V_{R}}=\frac{22.94}{24.04} \cdot \frac{25.60}{26.70} \\*
+\frac{V_{L}}{V_{R}}=0.915
+\end{gather*}
 
 \subsubsection{Heat Transfer and Net Heat Transfer}
 
@@ -357,14 +366,12 @@ initially and finally reaches approximately ambient
 temperature, there is no boundary work, and the total mass
 of the system remains constant, the First Law of
 Thermodynamics gives:
-
 \begin{equation}
     \Delta U = Q - W
 \end{equation}
 
 Since the tanks are rigid, no boundary work is performed,
 and assuming negligible other work interactions:
-
 \begin{equation}
     W = 0
 \end{equation}
@@ -372,13 +379,11 @@ and assuming negligible other work interactions:
 Additionally, since the initial and final temperatures
 are roughly equal, the change in internal energy
 is approximately zero:
-
 \begin{equation}
     \Delta U \approx 0
 \end{equation}
 
 Therefore, the net heat transfer is:
-
 \begin{equation}
     \boxed{Q_{\mathrm{net}} \approx 0}
 \end{equation}
@@ -395,10 +400,10 @@ equalization between interconnected tanks.
 
 In Part 1A, air is transferred rapidly through a solenoid
 valve, leading to sudden changes in pressure and temperature,
-as seen in Figure~\ref{fig:part1a}. Alternatively, in
+as seen in Figures~\ref{fig:part1a-pressure}--\ref{fig:part1a-temperature}. Alternatively, in
 Part 1B, air is transferred gradually through a needle
 valve, producing slower changes in these properties, as
-seen in Figure~\ref{fig:part1b}.
+seen in Figures~\ref{fig:part1b-pressure}--\ref{fig:part1b-temperature}.
 
 Despite these differences in the paths of the two processes,
 the final equilibrium pressure is approximately the same
@@ -444,18 +449,22 @@ When setting the pressure of the system to 40 PSI, we were reliant on a teammate
 
 Additionally, sensor data displayed that the mass flow rate was not completely constant at 50 g/s, even when temperature and pressure have stabilized for the air in the tank. \@
 
-\begin{figure}[H]
+\suppressfloats[t]
+\begin{figure}[!htb]
     \centering
     \includegraphics[width=0.82\linewidth,height=0.27\textheight,keepaspectratio]{lab-part2_plots/pressure.png}
     \caption{Tank pressures during Part 2.}
     \label{fig:part2-pressure}
-    \par\vspace{12pt}
+\end{figure}
+
+\begin{figure}[!htb]
+    \centering
     \includegraphics[width=0.82\linewidth,height=0.27\textheight,keepaspectratio]{lab-part2_plots/temperature.png}
     \caption{Tank temperatures during Part 2.}
     \label{fig:part2-temperature}
 \end{figure}
 
-\begin{figure}[H]
+\begin{figure}[!htb]
     \centering
     \includegraphics[width=0.82\linewidth,height=0.27\textheight,keepaspectratio]{lab-part2_plots/mass_flow_rate.png}
     \caption{Mass flow rate during Part 2.}
@@ -469,11 +478,10 @@ The compressibility of air can greatly affect experimental results of pressure a
 
 One can model this using the compressibility factor, where
 \[
-    Z = \frac{Pv}{RT}
-\]
-or
-\[
-    PV - ZRT.
+\begin{gathered}
+    Z = \frac{Pv}{RT} \\
+    \text{or}\quad PV = ZRT.
+\end{gathered}
 \]
 Under constant volume, this measures the divergence of a physical model from Gay-Lussac's Law.
 
@@ -510,6 +518,7 @@ Thus, through these calculations, we can see that the compressibility of air sig
 
 \section{Conclusion}
 % Summarize the major experimental outcomes/findings. Maximum 1 page.
+
 
 \section*{References}
 \phantomsection
